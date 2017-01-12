@@ -1,0 +1,20 @@
+{
+    "type": "datasource",
+    "name": "Tgres",
+    "id": "tgres",
+
+    "metrics": true,
+    "alerting": false,
+    "annotations": false,
+
+    "info": {
+        "description": "Tgres plugin for Grafana",
+        "author": {
+            "name": "Gregory Trubetskoy",
+            "url": "http://tgres.org"
+        },
+        "keywords": ["tgres"],
+        "version": "0.9.0",
+        "updated": "2017-01-11"
+    }
+}

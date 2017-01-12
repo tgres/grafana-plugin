@@ -1,0 +1,9 @@
+/tmp
+
+*.sublime-workspace
+*.swp
+.idea/
+*.iml
+.vscode/
+*~
+
