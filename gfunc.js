@@ -34,25 +34,18 @@ function (_, $) {
     ];
 
     // addFuncDef({
-    //     name: 'generate',
+    //     name: 'scaleToSeconds',
     //     category: categories.Transform,
-    //     params: [],
-    //     defaultParams: [],
+    //     params: [{ name: 'seconds', type: 'int' }],
+    //     defaultParams: [1],
     // });
 
-    addFuncDef({
-        name: 'scaleToSeconds',
-        category: categories.Transform,
-        params: [{ name: 'seconds', type: 'int' }],
-        defaultParams: [1],
-    });
-
-    addFuncDef({
-        name: 'perSecond',
-        category: categories.Transform,
-        params: [{ name: "max value", type: "int", optional: true }],
-        defaultParams: [],
-    });
+    // addFuncDef({
+    //     name: 'perSecond',
+    //     category: categories.Transform,
+    //     params: [{ name: "max value", type: "int", optional: true }],
+    //     defaultParams: [],
+    // });
 
     addFuncDef({
         name: "holtWintersForecast",
@@ -87,12 +80,12 @@ function (_, $) {
         category: categories.Calculate,
     });
 
-    addFuncDef({
-        name: 'stddevSeries',
-        params: optionalSeriesRefArgs,
-        defaultParams: [''],
-        category: categories.Calculate,
-    });
+    // addFuncDef({
+    //     name: 'stddevSeries',
+    //     params: optionalSeriesRefArgs,
+    //     defaultParams: [''],
+    //     category: categories.Calculate,
+    // });
 
     addFuncDef({
         name: 'divideSeries',
@@ -208,6 +201,13 @@ function (_, $) {
             { name: "node", type: "int", optional: true },
         ],
         defaultParams: [3]
+    });
+
+    addFuncDef({
+        name: 'sinusoid',
+        category: categories.Special,
+        params: [],
+        defaultParams: [],
     });
 
     addFuncDef({
@@ -424,27 +424,27 @@ function (_, $) {
         defaultParams: ['1d']
     });
 
-    addFuncDef({
-        name: 'timeStack',
-        category: categories.Transform,
-        params: [
-            { name: "timeShiftUnit", type: "select", options: ['1h', '6h', '12h', '1d', '2d', '7d', '14d', '30d'] },
-            { name: "timeShiftStart", type: "int" },
-            { name: "timeShiftEnd", type: "int" }
-        ],
-        defaultParams: ['1d', 0, 7]
-    });
+    // addFuncDef({
+    //     name: 'timeStack',
+    //     category: categories.Transform,
+    //     params: [
+    //         { name: "timeShiftUnit", type: "select", options: ['1h', '6h', '12h', '1d', '2d', '7d', '14d', '30d'] },
+    //         { name: "timeShiftStart", type: "int" },
+    //         { name: "timeShiftEnd", type: "int" }
+    //     ],
+    //     defaultParams: ['1d', 0, 7]
+    // });
 
-    addFuncDef({
-        name: 'summarize',
-        category: categories.Transform,
-        params: [
-            { name: "interval", type: "string" },
-            { name: "func", type: "select", options: ['sum', 'avg', 'min', 'max', 'last'] },
-            { name: "alignToFrom", type: "boolean", optional: true, options: ['false', 'true'] },
-        ],
-        defaultParams: ['1h', 'sum', 'false']
-    });
+    // addFuncDef({
+    //     name: 'summarize',
+    //     category: categories.Transform,
+    //     params: [
+    //         { name: "interval", type: "string" },
+    //         { name: "func", type: "select", options: ['sum', 'avg', 'min', 'max', 'last'] },
+    //         { name: "alignToFrom", type: "boolean", optional: true, options: ['false', 'true'] },
+    //     ],
+    //     defaultParams: ['1h', 'sum', 'false']
+    // });
 
     addFuncDef({
         name: 'smartSummarize',
@@ -458,12 +458,12 @@ function (_, $) {
         category: categories.Transform,
     });
 
-    addFuncDef({
-        name: 'hitcount',
-        category: categories.Transform,
-        params: [{ name: "interval", type: "string" }],
-        defaultParams: ['10s']
-    });
+    // addFuncDef({
+    //     name: 'hitcount',
+    //     category: categories.Transform,
+    //     params: [{ name: "interval", type: "string" }],
+    //     defaultParams: ['10s']
+    // });
 
     addFuncDef({
         name: 'log',
@@ -472,33 +472,33 @@ function (_, $) {
         defaultParams: ['10']
     });
 
-    addFuncDef({
-        name: 'averageAbove',
-        category: categories.Filter,
-        params: [{ name: "n", type: "int", }],
-        defaultParams: [25]
-    });
+    // addFuncDef({
+    //     name: 'averageAbove',
+    //     category: categories.Filter,
+    //     params: [{ name: "n", type: "int", }],
+    //     defaultParams: [25]
+    // });
 
-    addFuncDef({
-        name: 'averageBelow',
-        category: categories.Filter,
-        params: [{ name: "n", type: "int", }],
-        defaultParams: [25]
-    });
+    // addFuncDef({
+    //     name: 'averageBelow',
+    //     category: categories.Filter,
+    //     params: [{ name: "n", type: "int", }],
+    //     defaultParams: [25]
+    // });
 
-    addFuncDef({
-        name: 'currentAbove',
-        category: categories.Filter,
-        params: [{ name: "n", type: "int", }],
-        defaultParams: [25]
-    });
+    // addFuncDef({
+    //     name: 'currentAbove',
+    //     category: categories.Filter,
+    //     params: [{ name: "n", type: "int", }],
+    //     defaultParams: [25]
+    // });
 
-    addFuncDef({
-        name: 'currentBelow',
-        category: categories.Filter,
-        params: [{ name: "n", type: "int", }],
-        defaultParams: [25]
-    });
+    // addFuncDef({
+    //     name: 'currentBelow',
+    //     category: categories.Filter,
+    //     params: [{ name: "n", type: "int", }],
+    //     defaultParams: [25]
+    // });
 
     addFuncDef({
         name: 'maximumAbove',
@@ -542,19 +542,19 @@ function (_, $) {
         defaultParams: [10]
     });
 
-    addFuncDef({
-        name: "exclude",
-        category: categories.Filter,
-        params: [{ name: "exclude", type: 'string' }],
-        defaultParams: ['exclude']
-    });
+    // addFuncDef({
+    //     name: "exclude",
+    //     category: categories.Filter,
+    //     params: [{ name: "exclude", type: 'string' }],
+    //     defaultParams: ['exclude']
+    // });
 
-    addFuncDef({
-        name: "grep",
-        category: categories.Filter,
-        params: [{ name: "grep", type: 'string' }],
-        defaultParams: ['grep']
-    });
+    // addFuncDef({
+    //     name: "grep",
+    //     category: categories.Filter,
+    //     params: [{ name: "grep", type: 'string' }],
+    //     defaultParams: ['grep']
+    // });
 
     addFuncDef({
         name: 'highestCurrent',
